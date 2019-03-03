@@ -1399,3 +1399,11 @@ services:
         - "${COUCHDB_PORT}:5984"
       networks:
         - backend
+
+### Gradle ##################################
+    gradle:
+      build:
+        context: ./gradle
+      volumes:
+        - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+      tty: true
